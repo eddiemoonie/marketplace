@@ -1,2 +1,3 @@
-class Product < ApplicationRecord
+class Product < ActiveRecord::Base
+  belongs_to :user
 end
