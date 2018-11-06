@@ -13,3 +13,7 @@
   <label for="">Product Details</label>
   <p><%= @product.description %></p>
 </div>
+
+<% if @product.user != current_user %>
+  <input type="button" name="" value="Buy Now">
+<% end %>
