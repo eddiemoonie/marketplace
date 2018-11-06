@@ -1,2 +1,14 @@
 <h1><%= @product.name %></h1>
-<%= @product.user_id %>
+<h2><%= number_to_currency(@product.price, :unit => "$") %></h2>
+
+<div class="">
+  <strong><%= @product.size %></strong>
+  <strong><%= @product.condition %></strong>
+</div>
+
+<br>
+
+<div class="">
+  <label for="">Product Details</label>
+  <p><%= @product.description %></p>
+</div>
