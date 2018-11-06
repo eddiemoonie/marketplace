@@ -1,2 +1,10 @@
 <h1>Products</h1>
-<%= @products.count %>
+<p><%= @products.count %> total product(s)</p>
+
+<% @products.each do |product| %>
+  <div class="">
+    <p><%= link_to "#{product.name}", product_path(product) %></p>
+    <p><%= product.size %></p>
+    <p><%= number_to_currency(product.price, :unit => "$") %></p>
+  </div>
+<% end %>
