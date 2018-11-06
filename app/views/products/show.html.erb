@@ -1,5 +1,6 @@
 <h1><%= @product.name %></h1>
 <h2><%= number_to_currency(@product.price, :unit => "$") %></h2>
+<h3><%= @product.user.username %></h3>
 
 <div class="">
   <strong><%= @product.size %></strong>
