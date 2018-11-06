@@ -16,4 +16,6 @@
 
 <% if @product.user != current_user %>
   <input type="button" name="" value="Buy Now">
+<% else %>
+  <button><%= link_to "Edit", edit_product_path(@product) %></button>
 <% end %>
