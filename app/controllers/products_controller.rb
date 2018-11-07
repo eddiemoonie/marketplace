@@ -50,7 +50,8 @@ class ProductsController < ApplicationController
         :description,
         :size,
         :condition,
-        :price
+        :price,
+        :image
       )
     end
 end
