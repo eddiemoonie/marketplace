@@ -1,29 +1,35 @@
 <h1><%= @user.username %></h1>
 <p><%= @user.purchases.count if @user.purchases.exists? %></p>
 
-<h3>On The Market</h3>
-<% @user.products.each do |product| %>
-  <% if !product.sold %>
-    <div class="">
-      <%= image_tag(product.image.url, :size => "315x180") if product.image.exists? %>
-      <p><%= link_to "#{product.name}", product_path(product) %></p>
-      <p><%= product.size %></p>
-      <p><%= number_to_currency(product.price, :unit => "$") %></p>
-    </div>
+<div class="column-left">
+  <h3>On The Market</h3>
+  <% @user.products.each do |product| %>
+    <% if !product.sold %>
+      <div class="">
+        <%= image_tag(product.image.url, :size => "315x180") if product.image.exists? %>
+        <p><%= link_to "#{product.name}", product_path(product) %></p>
+        <p><%= product.size %></p>
+        <p><%= number_to_currency(product.price, :unit => "$") %></p>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
-<h3>Sold Products</h3>
-<% @user.products.each do |product| %>
-  <% if product.sold %>
-    <div class="">
-      <%= image_tag(product.image.url, :size => "315x180") if product.image.exists? %>
-      <p><%= link_to "#{product.name}", product_path(product) %></p>
-      <p><%= product.size %></p>
-      <p><%= number_to_currency(product.price, :unit => "$") %></p>
-      <p>SOLD TO: <%= link_to "#{product.purchase.user.username}", user_path(product.purchase.user) %></p>
-    </div>
+<div class="column-center">
+  <h3>Sold Products</h3>
+  <% @user.products.each do |product| %>
+    <% if product.sold %>
+      <div class="">
+        <%= image_tag(product.image.url, :size => "315x180") if product.image.exists? %>
+        <p><%= link_to "#{product.name}", product_path(product) %></p>
+        <p><%= product.size %></p>
+        <p><%= number_to_currency(product.price, :unit => "$") %></p>
+        <p>SOLD TO: <%= link_to "#{product.purchase.user.username}", user_path(product.purchase.user) %></p>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
-<h3>Purchased Products</h3>
+<div class="column-right">
+  <h3>Purchased Products</h3>
+</div>

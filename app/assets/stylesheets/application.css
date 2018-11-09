@@ -73,5 +73,9 @@ h1 {
 
 form {
   margin: 0 auto;
-  width:130px;  
+  width:130px;
 }
+
+.column-left{ float: left; width: 33%; }
+.column-right{ float: right; width: 33%; }
+.column-center{ display: inline-block; width: 33%; }
