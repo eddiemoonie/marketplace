@@ -20,4 +20,6 @@ class FeedbacksController < ApplicationController
   #     redirect_to new_feedback_path
   #   end
   # end
+  def new
+  end
 end

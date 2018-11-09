@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   post "/purchases/new", to: "purchases#new"
   resources :products
   resources :users
+  resources :feedbacks
 end

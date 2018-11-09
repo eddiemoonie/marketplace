@@ -39,6 +39,7 @@
       <p><%= link_to "#{purchase.product.name}", product_path(purchase.product) %></p>
       <p><%= purchase.product.size %></p>
       <p><%= number_to_currency(purchase.product.price, :unit => "$") %></p>
+      <p><%= link_to "Leave a Feedback", new_feedback_path %></p>
     </div>
   <% end %>
 </div>
