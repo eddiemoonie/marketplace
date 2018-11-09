@@ -46,6 +46,11 @@ ul {
   list-style: none;
 }
 
+h1 {
+  display: flex;
+  justify-content: space-around;
+}
+
 .navbar-nav{
   display: flex;
 }
@@ -59,4 +64,14 @@ ul {
 
 *, :after, :before {
     box-sizing: border-box;
+}
+
+h1 {
+  display: flex;
+  justify-content: space-around;
+}
+
+form {
+  margin: 0 auto;
+  width:130px;  
 }
