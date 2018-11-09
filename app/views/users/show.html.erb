@@ -21,10 +21,10 @@
     <% if product.sold %>
       <div class="">
         <%= image_tag(product.image.url, :size => "315x180") if product.image.exists? %>
+        <p>SOLD TO: <%= link_to "#{product.purchase.user.username}", user_path(product.purchase.user) %></p>
         <p><%= link_to "#{product.name}", product_path(product) %></p>
         <p><%= product.size %></p>
         <p><%= number_to_currency(product.price, :unit => "$") %></p>
-        <p>SOLD TO: <%= link_to "#{product.purchase.user.username}", user_path(product.purchase.user) %></p>
       </div>
     <% end %>
   <% end %>
@@ -32,4 +32,13 @@
 
 <div class="column-right">
   <h3>Purchased Products</h3>
+  <% @user.purchases.each do |purchase| %>
+    <div class="">
+      <%= image_tag(purchase.product.image.url, :size => "315x180") if purchase.product.image.exists? %>
+      <p>Seller: <%= link_to "#{purchase.product.user.username}", user_path(purchase.product.user) %></p>
+      <p><%= link_to "#{purchase.product.name}", product_path(purchase.product) %></p>
+      <p><%= purchase.product.size %></p>
+      <p><%= number_to_currency(purchase.product.price, :unit => "$") %></p>
+    </div>
+  <% end %>
 </div>
