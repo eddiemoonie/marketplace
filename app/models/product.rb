@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :user
   has_one :feedback
+  has_one :purchase
 
   has_attached_file :image, :styles => {
       :thumb    => ['100x100#',  :jpg, :quality => 70],
