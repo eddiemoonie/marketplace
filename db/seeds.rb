@@ -25,3 +25,10 @@ User.create(
   :password => "kwon",
   :email => "kevinkwon@gmail.com"
 )
+
+User.create(
+  :id => 4,
+  :username => "Jason",
+  :password => "lee",
+  :email => "jasonlee@gmail.com"
+)
