@@ -74,7 +74,14 @@ h1 {
 
 form {
   margin: 0 auto;
-  width:130px;
+  width: 130px;
+}
+
+.form-container {
+  margin: 0 auto;
+  margin-top:10px;
+  width: 25%;
+  border-style: inset;
 }
 
 /* User Show Page */
@@ -84,13 +91,27 @@ form {
 
 /* Products Index */
 .column {
-    float: left;
-    width: 33%;
-    padding: 10px;
+  float: left;
+  width: 33%;
+  padding: 10px;
+}
+
+.image-container {
+  border-style: ridge;
+  display: flex;
+}
+
+.img {
+  display: block;
+  margin: auto;
+}
+
+.row {
+  border: 2px solid grey;
 }
 
 .row:after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
