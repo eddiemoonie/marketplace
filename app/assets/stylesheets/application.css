@@ -81,7 +81,7 @@ form {
   margin: 0 auto;
   margin-top:10px;
   width: 25%;
-  border-style: inset;
+  border: 2px solid grey;
 }
 
 /* User Show Page */
