@@ -1,33 +1,54 @@
-<h1><%= @product.name %></h1>
-<div class="">
-  <%= image_tag @product.image.url(:large) if @product.image.exists? %>
-</div>
+<div class="product-col-left">
+  <h1><%= @product.name %></h1>
 
-<h2><%= number_to_currency(@product.price, :unit => "$") %></h2>
-<h3><%= link_to "#{@product.user.username}", user_path(@product.user) %></h3>
-
-<div class="">
-  <strong><%= @product.size %></strong>
-  <strong><%= @product.condition %></strong>
-</div>
-
-<br>
-
-<div class="">
-  <label for="">Product Details</label>
-  <p><%= @product.description %></p>
-</div>
-
-<% if @product.user != current_user && !@product.sold %>
-  <form action="/purchases/new" method="post">
-    <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
-    <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
-    <%= tag(:input, :type => "hidden", :name => :product_id, :value => @product.id) %>
-    <input class="btn btn-light" type="submit" value="Buy Now">
-  </form>
-<% elsif @product.user == current_user && !@product.sold %>
-  <div class="">
-    <%= button_to "Edit", edit_product_path(@product), :method => :get %>
-    <%= button_to "Delete", @product, :method => :delete %>
+  <div class="image-container">
+    <div class="img">
+      <%= image_tag @product.image.url(:large) if @product.image.exists? %>
+    </div>
   </div>
-<% end %>
+
+  <br>
+
+  <div class="prod-head">
+    <h2>Product Details</h2>
+  </div>
+
+
+  <div class="product">
+    <div class="prod-specs">
+      <h4>Product Specs</h4>
+    </div>
+    <div class="prod-description">
+      <h4>Description</h4>
+    </div>
+  </div>
+
+  <div class="product">
+    <div class="prod-specs">
+      <label for="">Price: </label><strong><%= number_to_currency(@product.price, :unit => "$") %></strong><br>
+      <label for="">Size: </label><strong><%= @product.size %></strong><br>
+      <label for="">Condition: </label><strong><%= @product.condition %></strong><br>
+      <label for="">Seller: </label><%= link_to "#{@product.user.username}", user_path(@product.user) %>
+    </div>
+
+    <div class="prod-description">
+      <p><%= @product.description %></p>
+    </div>
+  </div>
+</div>
+
+<div class="product-col-right">
+  <% if @product.user != current_user && !@product.sold %>
+    <form action="/purchases/new" method="post">
+      <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+      <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
+      <%= tag(:input, :type => "hidden", :name => :product_id, :value => @product.id) %>
+      <input class="btn btn-light" type="submit" value="Buy Now">
+    </form>
+  <% elsif @product.user == current_user && !@product.sold %>
+    <div class="">
+      <%= button_to "Edit", edit_product_path(@product), :method => :get %>
+      <%= button_to "Delete", @product, :method => :delete %>
+    </div>
+  <% end %>
+</div>

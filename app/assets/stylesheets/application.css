@@ -52,6 +52,18 @@ h1 {
   justify-content: space-around;
 }
 
+h2 {
+  margin: auto;
+}
+
+h3 {
+  text-align: center;
+}
+
+h4 {
+  margin: auto;
+}
+
 .navbar-nav{
   display: flex;
 }
@@ -67,14 +79,7 @@ h1 {
     box-sizing: border-box;
 }
 
-h1 {
-  display: flex;
-  justify-content: space-around;
-}
 
-h3 {
-  text-align: center;
-}
 
 form {
   margin: 0 auto;
@@ -93,9 +98,48 @@ form {
 .column-right{ display: inline-block; width: 33%; padding: 10px; vertical-align: top;}
 .column-center{ display: inline-block; width: 33%; padding: 10px; vertical-align: top;}
 
+/* Product Show */
+.product-col-left {
+  display: inline-block;
+  width: 66%;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.product-col-right {
+  display: inline-block;
+  width: 33%;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.prod-head {
+  border-style: ridge;
+  display: flex;
+}
+
+.product {
+  display: flex;
+}
+
+.prod-specs {
+  display: inline-block;
+  width: 33%;
+  padding: 10px;
+  border-style: ridge;
+  text-align: center;
+}
+
+.prod-description {
+  display: inline-block;
+  width: 67%;
+  padding: 10px;
+  border-style: ridge;
+  text-align: center;
+}
+
 /* Products Index */
 .column {
-  /* float: left; */
   display: inline-block;
   width: 33%;
   padding: 10px;
