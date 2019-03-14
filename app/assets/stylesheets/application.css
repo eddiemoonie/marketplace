@@ -72,6 +72,10 @@ h1 {
   justify-content: space-around;
 }
 
+h3 {
+  text-align: center;
+}
+
 form {
   margin: 0 auto;
   width: 130px;
@@ -85,13 +89,14 @@ form {
 }
 
 /* User Show Page */
-.column-left{ float: left; width: 33%; }
-.column-right{ float: right; width: 33%; }
-.column-center{ display: inline-block; width: 33%; }
+.column-left{ display: inline-block; width: 33%; padding: 10px; vertical-align: top;}
+.column-right{ display: inline-block; width: 33%; padding: 10px; vertical-align: top;}
+.column-center{ display: inline-block; width: 33%; padding: 10px; vertical-align: top;}
 
 /* Products Index */
 .column {
-  float: left;
+  /* float: left; */
+  display: inline-block;
   width: 33%;
   padding: 10px;
 }
