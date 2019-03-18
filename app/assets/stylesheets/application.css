@@ -138,6 +138,17 @@ form {
   text-align: center;
 }
 
+.seller-info-head {
+  border-style: ridge;
+  display: flex;
+}
+
+.seller-info {
+  padding: 10px;
+  border-style: ridge;
+  text-align: center;
+}
+
 /* Products Index */
 .column {
   display: inline-block;
