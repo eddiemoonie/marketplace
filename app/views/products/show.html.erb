@@ -43,7 +43,7 @@
 
   <div class="seller-info">
       <label for="">Seller: </label><%= link_to "#{@product.user.username}", user_path(@product.user) %><br>
-      <strong>Star Rating</strong><br>
+      <label for="">Rating: </label><strong><%= @product.user.feedbacks.average(:rating) %></strong><br>
       <strong>Reviews</strong>
   </div>
 
