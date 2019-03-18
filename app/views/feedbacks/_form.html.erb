@@ -1,9 +1,13 @@
 <%= form_for @feedback do |f| %>
 
   <div class="">
+    <%= f.hidden_field :user_id, :value => params[:user_id]%>
+  </div>
+
+  <div class="">
     <%= f.label :rating %>
     <br>
-    <%= f.text_field :rating %>
+    <%= f.select:rating, options_for_select((0..5).step(1)), :prompt => "Select" %>
   </div>
 
   <div class="">
