@@ -149,6 +149,10 @@ form {
   text-align: center;
 }
 
+.buttons {
+  text-align: center;
+}
+
 /* Products Index */
 .column {
   display: inline-block;
