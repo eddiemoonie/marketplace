@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :user
-  has_one :feedback
+  has_many :feedbacks, :through => :user
   has_one :purchase
 
   has_attached_file :image, :styles => {
