@@ -49,7 +49,7 @@
       <ul>
         <% @product.user.feedbacks.each do |feedback| %>
           <li>
-            "<%= feedback.review %>"<br>
+            "<%= feedback.review %>" - <%= feedback.buyer_name %><br>
           </li>
         <% end %>
       </ul>

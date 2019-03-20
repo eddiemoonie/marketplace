@@ -3,7 +3,7 @@ class FeedbacksController < ApplicationController
 
   def create
     @feedback = Feedback.new(feedback_params)
-    @feedback.buyer_id = current_user.id
+    @feedback.buyer_name = current_user.username
     if @feedback.save
       redirect_to user_path(current_user)
     else

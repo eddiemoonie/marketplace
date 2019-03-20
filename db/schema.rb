@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_18_193951) do
+ActiveRecord::Schema.define(version: 2019_03_20_191742) do
 
   create_table "feedbacks", force: :cascade do |t|
     t.string "rating"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_03_18_193951) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "buyer_id"
+    t.string "buyer_name"
   end
 
   create_table "products", force: :cascade do |t|
