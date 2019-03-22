@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :feedbacks, :through => :user
   has_one :purchase
-  has_many :bookmarked_items
+  has_many :favorited_items
 
   has_attached_file :image, :styles => {
       :thumb    => ['100x100>',  :jpg, :quality => 70],

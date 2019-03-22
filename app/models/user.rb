@@ -4,6 +4,6 @@ class User < ApplicationRecord
   has_many :products
   has_many :feedbacks
   has_many :purchases
-  has_one :bookmarks
-  has_many :bookmarked_items, :through => :bookmarks
+  has_one :favorites_list
+  has_many :favorited_items, :through => :favorites_list
 end

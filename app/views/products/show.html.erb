@@ -58,7 +58,6 @@
 
   <% if @product.user != current_user && !@product.sold %>
     <div class="buttons">
-      <%= button_to "Add to Wishlist" %>
       <form action="/purchases/new" method="post">
         <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
         <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>
