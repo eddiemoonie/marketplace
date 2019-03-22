@@ -11,6 +11,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      @favorites_list = FavoritesList.new
+      @favorites_list.user_id = @user.id
+      @favorites_list.save
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
