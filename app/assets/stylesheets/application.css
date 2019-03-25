@@ -66,6 +66,7 @@ h4 {
 
 .navbar-nav{
   display: flex;
+  justify-content: center;
 }
 
 .navbar-nav li {
