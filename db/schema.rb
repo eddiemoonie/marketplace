@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_22_205057) do
+ActiveRecord::Schema.define(version: 2019_03_25_212441) do
 
   create_table "favorited_items", force: :cascade do |t|
     t.integer "favorites_list_id"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2019_03_22_205057) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "buyer_name"
+    t.string "seller_name"
   end
 
   create_table "products", force: :cascade do |t|
