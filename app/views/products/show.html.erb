@@ -47,10 +47,12 @@
 
       <h4>Seller Reviews</h4>
       <ul>
-        <% @product.user.feedbacks.each do |feedback| %>
-          <li>
-            "<%= feedback.review %>" - <%= feedback.buyer_name %><br>
-          </li>
+        <% Feedback.all.each do |feedback| %>
+          <% if feedback.seller_name = @product.user.username %>
+            <li>
+              "<%= feedback.review %>" - <%= feedback.seller_name %><br>
+            </li>
+          <% end %>
         <% end %>
       </ul>
   </div>

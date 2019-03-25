@@ -3,7 +3,7 @@ class FeedbacksController < ApplicationController
 
   def create
     @feedback = Feedback.new(feedback_params)
-    @feedback.buyer_name = current_user.username
+    @feedback.user_id = current_user.id
     if @feedback.save
       redirect_to user_path(current_user)
     else
@@ -22,7 +22,7 @@ class FeedbacksController < ApplicationController
       :rating,
       :review,
       :user_id,
-      :buyer_id
+      :seller_id
     )
   end
 end
