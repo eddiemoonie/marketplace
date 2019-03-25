@@ -1,6 +1,6 @@
 <p><%= @products.where(:sold => false).count %> total product(s)</p>
 
-<% if @products.count > 0 %>
+<% if @products.where(:sold => false).count > 0 %>
   <div class="row">
     <% @products.each do |product| %>
       <% if !product.sold %>
