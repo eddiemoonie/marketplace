@@ -58,6 +58,12 @@
 
   <% if @product.user != current_user && !@product.sold %>
     <div class="buttons">
+      <form action="/favorites/new" method="post">
+        <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+        <%= tag(:input, :type => "hidden", :name => :favorites_list_id, :value => current_user.favorites_list.id) %>
+        <%= tag(:input, :type => "hidden", :name => :product_id, :value => @product.id) %>
+        <input class="btn btn-light" type="submit" value="Add to Favorites">
+      </form>
       <form action="/purchases/new" method="post">
         <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
         <%= tag(:input, :type => "hidden", :name => :user_id, :value => current_user.id) %>

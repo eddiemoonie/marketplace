@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   post "/purchases/new", to: "purchases#new"
   get "/favorites", to: "favorites_lists#show"
+  post "/favorites/new", to: "favorited_items#new"
   resources :products
   resources :users
   resources :feedbacks
