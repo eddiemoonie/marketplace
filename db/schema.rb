@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_25_212441) do
+ActiveRecord::Schema.define(version: 2019_03_28_200411) do
 
   create_table "favorited_items", force: :cascade do |t|
     t.integer "favorites_list_id"
@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 2019_03_25_212441) do
   create_table "feedbacks", force: :cascade do |t|
     t.string "rating"
     t.string "review"
-    t.integer "user_id"
+    t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "seller_name"
+    t.string "buyer_name"
   end
 
   create_table "products", force: :cascade do |t|
