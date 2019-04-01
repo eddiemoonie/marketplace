@@ -1,4 +1,5 @@
 class FavoritedItemsController < ApplicationController
+  
   def new
     @favorited_item = FavoritedItem.new(
       :favorites_list_id => params[:favorites_list_id],
