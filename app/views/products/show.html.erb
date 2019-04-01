@@ -41,16 +41,17 @@
     <h2>Seller Information</h2>
   </div>
 
+<!-- Need to fix this -->
   <div class="seller-info">
       <label for="">Seller: </label><%= link_to "#{@product.user.username}", user_path(@product.user) %><br>
-      <label for="">Rating: </label><strong><%= @product.feedbacks.average(:rating) %></strong><br><br>
+      <label for="">Rating: </label><strong><%= @product.user.feedbacks.average(:rating) %></strong><br><br>
 
       <h4>Seller Reviews</h4>
       <ul>
         <% Feedback.all.each do |feedback| %>
-          <% if feedback.seller_name = @product.user.username %>
+          <% if feedback.product.user.username = @product.user.username %>
             <li>
-              "<%= feedback.review %>" - <%= feedback.seller_name %><br>
+              "<%= feedback.review %>" - <%= feedback.buyer_name %><br>
             </li>
           <% end %>
         <% end %>

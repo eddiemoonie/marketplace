@@ -3,7 +3,6 @@ class FeedbacksController < ApplicationController
 
   def create
     @feedback = Feedback.new(feedback_params)
-    @feedback.user_id = current_user.id
     if @feedback.save
       redirect_to user_path(current_user)
     else
@@ -13,6 +12,8 @@ class FeedbacksController < ApplicationController
 
   def new
     @feedback = Feedback.new
+    @product_id = Product.find(params[:product_id])
+    @feedback.buyer_name = current_user.username
   end
 
   private
@@ -21,8 +22,8 @@ class FeedbacksController < ApplicationController
     params.require(:feedback).permit(
       :rating,
       :review,
-      :user_id,
-      :seller_id
+      :product_id,
+      :buyer_name
     )
   end
 end
