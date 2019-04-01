@@ -3,6 +3,7 @@ class FeedbacksController < ApplicationController
 
   def create
     @feedback = Feedback.new(feedback_params)
+    @feedback.buyer_name = current_user.username
     if @feedback.save
       redirect_to user_path(current_user)
     else
@@ -12,8 +13,8 @@ class FeedbacksController < ApplicationController
 
   def new
     @feedback = Feedback.new
-    @product_id = Product.find(params[:product_id])
-    @feedback.buyer_name = current_user.username
+    @feedback.product_id = Product.find(params[:product_id])
+    @feedback.user_id = User.find(params[:user_id])
   end
 
   private
@@ -23,6 +24,7 @@ class FeedbacksController < ApplicationController
       :rating,
       :review,
       :product_id,
+      :user_id,
       :buyer_name
     )
   end

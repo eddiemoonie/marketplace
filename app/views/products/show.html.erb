@@ -49,7 +49,7 @@
       <h4>Seller Reviews</h4>
       <ul>
         <% Feedback.all.each do |feedback| %>
-          <% if feedback.product.user.username = @product.user.username %>
+          <% if feedback.user_id = @product.user_id %>
             <li>
               "<%= feedback.review %>" - <%= feedback.buyer_name %><br>
             </li>
