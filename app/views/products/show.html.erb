@@ -44,14 +44,14 @@
 <!-- Need to fix this -->
   <div class="seller-info">
       <label for="">Seller: </label><%= link_to "#{@product.user.username}", user_path(@product.user) %><br>
-      <label for="">Rating: </label><strong><%= @product.user.feedbacks.average(:rating) %></strong><br><br>
+      <label for="">Rating: </label><strong><%= @product.reviews.average(:rating) %></strong><br><br>
 
       <h4>Seller Reviews</h4>
       <ul>
-        <% Feedback.all.each do |feedback| %>
-          <% if feedback.user_id == @product.user_id %>
+        <% Review.all.each do |review| %>
+          <% if review.user_id == @product.user_id %>
             <li>
-              "<%= feedback.review %>" - <%= feedback.buyer_name %><br>
+              "<%= review.post %>" - <%= review.consumer %><br>
             </li>
           <% else %>
             <li></li>
